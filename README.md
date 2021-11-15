@@ -1,6 +1,14 @@
 # Kanban
 Project to create a kanban using Python flask
 
+# Third party packages
+```python
+Before running application, first find requirements.txt in repo and  download third party packages by:
+pip install -r requirements.txt
+or
+pip3 install -r requirements.txt
+```
+
 # How to run the app
 ```bash
 Git clone the project

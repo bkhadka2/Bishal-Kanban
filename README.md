@@ -21,6 +21,9 @@ Type: exit()
 Type: flask run
 ```
 
+# Heroku link for the app
+To open the app in heroku [click here](https://bishalkanban.herokuapp.com/)
+
 # Screenshots of app running
 ![App running 0](./screenshots/app_running.png)
 ![App running 1](./screenshots/app_running1.png)

@@ -17,6 +17,8 @@ Open your terminal in the same window where app.py is
 Type python3
 Type: from app import db
 Type: db.create_all()
+Type: exit()
+Type: flask run
 ```
 
 # Screenshots of app running

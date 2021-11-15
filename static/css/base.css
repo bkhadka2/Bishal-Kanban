@@ -1,0 +1,79 @@
+h1 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+/* css of input groups*/
+.input-group {
+  margin-left: 30%;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+/* Less than 1198 px will lead to following css*/
+@media screen and (max-width: 1198px) {
+  .input-group {
+    margin-left: 0%;
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Maintains the width of margin of the input box */
+.text-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+/* Change the css of select button */
+#selection {
+  padding: 10px;
+  height: 50px;
+  margin-right: 10px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background: #c7c0c0;
+}
+
+/* Change the css of submit button */
+#submission {
+  border-radius: 20px;
+}
+
+/* Change the css of tasks */
+.inside-card {
+  background: #e3dddd;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+/* Change the color of three cards */
+.card {
+  background: rgba(196, 197, 252, 0.8);
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+/* Change the css of the input field */
+.form-control {
+  position: absolute;
+  width: 30%;
+  height: 50px;
+  background: #c7c0c0;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+/* Chane the css of placeholder */
+form .form-control::placeholder {
+  color: rgba(250, 246, 246, 0.65);
+  font-family: sans-serif;
+  font-style: normal;
+  line-height: 30px;
+  opacity: 1;
+}
+

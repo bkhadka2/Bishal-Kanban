@@ -1,0 +1,125 @@
+{% extends 'base.html' %} {% block title %} Kanban Board {% endblock %} {% block
+h1 %} Kanban Board {% endblock %} {% block body %}
+
+<!-- This is for Input Field -->
+<form action="/" , method="POST">
+  <div class="input-group">
+    <div class="text-input">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter your task here"
+        aria-label="Recipient's username with two button addons"
+        name="input-content"
+      />
+    </div>
+    <select
+      class="form-select-padding-x"
+      aria-label="Default select example"
+      name="select-content"
+      id="selection"
+    >
+      <option selected>Status</option>
+      <option value="To do">To do</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+
+    <button
+      class="btn btn-outline-secondary text-white bg-success"
+      type="submit"
+      id="submission"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+
+<!-- This is for Cards -->
+<div class="row">
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-secondary text-center">
+          To do <span class="badge bg-secondary">{{countT}}</span>
+        </h5>
+        {% for task in tasks %} {% if 'To do' in task.status %}
+        <div class="card">
+          <div class="card-body inside-card">
+            <h5 class="card-title text-dark">{{task.content}}</h5>
+            <h5 class="card-title text-muted h6">{{task.timeStamp.date()}}</h5>
+            <a href="/edit/{{task.id}}"
+              ><button type="submit" class="btn btn-primary" name="edit">
+                Edit
+              </button></a
+            >
+            <a href="/delete/{{task.id}}"
+              ><button type="submit" class="btn btn-danger" name="delete">
+                Delete
+              </button>
+            </a>
+          </div>
+        </div>
+
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-primary text-center">
+          In progress <span class="badge bg-secondary">{{countP}}</span>
+        </h5>
+        {% for task in tasks %} {% if 'In Progress' in task.status %}
+        <div class="card">
+          <div class="card-body inside-card">
+            <h5 class="card-title text-dark">{{task.content}}</h5>
+            <h5 class="card-title text-muted h6">{{task.timeStamp.date()}}</h5>
+            <a href="/edit/{{task.id}}"
+              ><button type="submit" class="btn btn-primary" name="edit">
+                Edit
+              </button></a
+            >
+            <a href="/delete/{{task.id}}"
+              ><button type="submit" class="btn btn-danger" name="delete">
+                Delete
+              </button></a
+            >
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-success text-center">
+          Completed <span class="badge bg-secondary">{{countC}}</span>
+        </h5>
+        {% for task in tasks %} {% if 'Completed' in task.status %}
+        <div class="card">
+          <div class="card-body inside-card">
+            <h5 class="card-title text-dark">{{task.content}}</h5>
+            <h5 class="card-title text-muted h6">{{task.timeStamp.date()}}</h5>
+            <a href="/edit/{{task.id}}"
+              ><button type="submit" class="btn btn-primary" name="edit">
+                Edit
+              </button></a
+            >
+            <a href="/delete/{{task.id}}"
+              ><button type="submit" class="btn btn-danger" name="delete">
+                Delete
+              </button></a
+            >
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
